@@ -11,12 +11,14 @@ phases:
       commands:
         - echo Build started on `date`
         - mvn clean install
+        - dir target
     post_build:
       commands:
         - echo Build completed on `date`
+        - ls
 
 
 artifacts:
   files:
-    - target/**/*.jar
+    - target/*.jar
   discard-paths: yes
